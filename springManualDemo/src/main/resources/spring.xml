@@ -1,0 +1,24 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+ 	<bean id="developer" class="com.lenner.springManualDemo.Developer" scope="prototype" lazy-init="false">
+ 	
+ 	</bean>
+
+ 
+	<bean id="person" class="com.lenner.springManualDemo.Person"  lazy-init="true">
+ 		<!--	<property name="age" value="21"></property> -->
+ 				<!--<property name="dev" ref="developer"></property> -->
+ 				<constructor-arg value="21" />
+				<constructor-arg ref="developer"/>
+ 	</bean>
+ 	
+ 	<bean id="tricycle" class="com.lenner.springManualDemo.Tricycle"/>
+	<bean id="bus" class="com.lenner.springManualDemo.Bus"  primary="true"/>
+	<bean id="driverService" class="com.lenner.springManualDemo.DriverService" autowire="byType">
+		<!--<property name="driver" ref="tricycle"/>-->
+	
+	</bean>
+</beans>
