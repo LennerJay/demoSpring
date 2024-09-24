@@ -1,9 +1,18 @@
 package com.lenner.springManualDemo;
 
+import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+
+
+//@Scope
+@Component("tricycle")
+@Primary
 public class Tricycle implements Driver {
 	
 	
-    Tricycle() {
+    public Tricycle() {
     
     }
 	;
